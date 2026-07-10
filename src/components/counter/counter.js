@@ -1,14 +1,16 @@
 import IncreaseButton from "./increaseButton"
 import DecreaseButton from "./decreaseButton"
+import {useSelector}from 'react-redux'
 
-export default function Counter({ counter , setCounter }) {
+export default function Counter() {
+    const counter =useSelector(state=>state.counter.value)
 
     return (
         <>
             <h3>Your Number is : {counter}</h3>
             <div className="flex">
-                <IncreaseButton counter={counter} setCounter={setCounter}/>
-                <DecreaseButton counter={counter} setCounter={setCounter}/>
+                <IncreaseButton />
+                <DecreaseButton/>
             </div>
         </>
     )
