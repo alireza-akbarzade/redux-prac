@@ -1,8 +1,11 @@
+import { useDispatch } from "react-redux"
+import { decrement } from "../../store/slices/counterSlice"
 
 
-export default function DecreaseButton({ counter , setCounter }) {
+export default function DecreaseButton() {
+    const dispatch =useDispatch()
     const decreaseHandler = () => {
-        setCounter(counter - 1);
+        dispatch(decrement())
     }
 
     return (

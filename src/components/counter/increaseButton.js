@@ -1,8 +1,10 @@
+import { useDispatch } from "react-redux"
+import { increment } from "../../store/slices/counterSlice"
 
-
-export default function IncreaseButton({ counter , setCounter  }) {
+export default function IncreaseButton() {
+    const dispach =useDispatch()
     const increaseHandler = () => {
-        setCounter(counter + 1);
+       dispach(increment())
     }
 
     return (
